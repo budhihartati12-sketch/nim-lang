@@ -1,0 +1,17 @@
+{
+  "name": "Nim Codespace",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "nimsaem.nimvscode",     // Ekstensi Nim untuk VS Code
+    "ms-vscode.cpptools",   // C/C++ tools (karena Nim compile ke C)
+    "editorconfig.editorconfig",
+    "eamodio.gitlens"
+  ],
+  "postCreateCommand": "nimble install -y", // auto install dependencies project
+  "remoteUser": "vscode"
+}

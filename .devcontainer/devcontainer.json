@@ -7,11 +7,9 @@
     "terminal.integrated.shell.linux": "/bin/bash"
   },
   "extensions": [
-    "nimsaem.nimvscode",     // Ekstensi Nim untuk VS Code
-    "ms-vscode.cpptools",   // C/C++ tools (karena Nim compile ke C)
-    "editorconfig.editorconfig",
-    "eamodio.gitlens"
+    "nimsaem.nimvscode",
+    "ms-vscode.cpptools"
   ],
-  "postCreateCommand": "nimble install -y", // auto install dependencies project
+  "postCreateCommand": "nimble --version",
   "remoteUser": "vscode"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "Nim Codespace",
+  "name": "Nim Dev Environment",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -7,9 +7,15 @@
     "terminal.integrated.shell.linux": "/bin/bash"
   },
   "extensions": [
-    "nimsaem.nimvscode",
-    "ms-vscode.cpptools"
+    "nimsaem.nimvscode",    // Nim extension
+    "ms-vscode.cpptools",  // C/C++ (dibutuhkan Nim karena compile ke C)
+    "editorconfig.editorconfig",
+    "eamodio.gitlens"
   ],
-  "postCreateCommand": "nimble --version",
+  "remoteEnv": {
+    "PATH": "/home/vscode/.nimble/bin:${PATH}",
+    "NIMBLE_DIR": "/home/vscode/.nimble"
+  },
+  "postCreateCommand": "nim --version && nimble --version",
   "remoteUser": "vscode"
 }
